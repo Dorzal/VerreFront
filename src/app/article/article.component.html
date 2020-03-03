@@ -1,0 +1,76 @@
+<div class="container">
+    <!-- Portfolio Item Heading -->
+  
+    <!-- Portfolio Item Row -->
+    <div class="row">
+      <div class="col-md-6">
+        <img
+          class="img-fluid"
+          src="{{article?.photoUrl}}"
+          alt="750*500"
+        />
+      </div>
+  
+      <div class="col-md-6">
+        <h5 class="my-3">{{article?.name}}</h5>
+        <p>{{article?.characteristic}}</p>
+        <div class="bs-example">
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <button
+                    type="button"
+                    class="btn btn-link collapsed"
+                    data-toggle="collapse"
+                    data-target="#collapseThree"
+                  >
+                    <i class="fa fa-plus"></i>DETAILS
+                  </button>
+                </h2>
+              </div>
+              <div
+                id="collapseThree"
+                class="collapse"
+                aria-labelledby="headingThree"
+                data-parent="#accordionExample"
+              >
+                <div class="card-body">
+                  <p>
+                    {{article?.detail}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-light panier" (click)="addItem(article?.id)">
+            <i class="fa fa-shopping-bag"></i> Ajouter au panier
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+  
+    <!-- Related Projects Row -->
+    <hr />
+    <h6 class="my-4">VOUS POURREZ AUSSI AIMER</h6>
+  
+    <div class="row">
+      <figure class="snip1583 col-md-3 col-sm-6 mb-4" *ngFor="let rand of random">
+        <div class="image">
+          <img
+            src="{{rand?.photoUrl}}"
+            alt="sample68"
+          />
+          <a href="/article/{{rand?.id}}" class="add-to-cart">Voir les détails</a>
+        </div>
+        <figcaption>
+          <h3>{{rand?.name}}</h3>
+          <div class="price">15.00 €</div>
+        </figcaption>
+      </figure>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+  

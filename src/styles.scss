@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+* {-moz-box-sizing: border-box; box-sizing: border-box;}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  padding-bottom: 20em;
+}
+
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 2rem;
+  text-align: center;
+}
+
+
+.nav li {
+  background-color: #292828;
+  width: 22em;
+}
+
+.recherche {
+  height: 60px;
+  margin-top: 30px;
+}
+
+.recherche span {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-left: 230px;
+}
+
+main {
+  background: white;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+main div {
+  /*  background: black; */
+  color: white;
+  padding: 15px;
+  /*   max-width: 250px; */
+  margin: 20px;
+}
+
+main div img {
+  height: 300px;
+  width: 300px;
+}
+
+.inline-block-center {
+  text-align: center;
+}
+.inline-block-center div {
+  display: inline-block;
+  text-align: left;
+}
+

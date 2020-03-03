@@ -1,0 +1,142 @@
+<div class="container">
+    <h1 class="cart-heading">Adresse</h1>
+                            
+    <div class="row bs-wizard" style="border-bottom:0;">
+        
+        <div class="col-xs-3 bs-wizard-step complete">
+          <div class="text-center bs-wizard-stepnum">RECAPITULATIF</div>
+          <div class="progress"><div class="progress-bar"></div></div>
+          <a href="#" class="bs-wizard-dot"></a>
+    
+        </div>
+        
+        <div class="col-xs-3 bs-wizard-step active">
+          <div class="text-center bs-wizard-stepnum">ADRESSE</div>
+          <div class="progress"><div class="progress-bar"></div></div>
+          <a href="#" class="bs-wizard-dot"></a>
+          
+        </div>
+        
+        <div class="col-xs-3 bs-wizard-step disabled">
+          <div class="text-center bs-wizard-stepnum">FACTURATION</div>
+          <div class="progress"><div class="progress-bar"></div></div>
+          <a href="#" class="bs-wizard-dot"></a>
+          
+        </div>
+        
+        <div class="col-xs-3 bs-wizard-step disabled">
+          <div class="text-center bs-wizard-stepnum">CONFIRMATION</div>
+          <div class="progress"><div class="progress-bar"></div></div>
+          <a href="#" class="bs-wizard-dot"></a>
+          
+        </div>
+    
+    
+      </div> 
+    
+    
+          <div class="row">
+              
+                  <div class="col-lg-6 col-md-6">
+                    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+                      <div class="checkbox-form">						
+                          <h3>Vos informations</h3>
+                          <div class="row">
+    
+                              <div class="col-md-6">
+                                  <div class="checkout-form-list">
+                                      <label>Nom<span class="required">*</span></label>										
+                                      <input type="text" placeholder="" formControlName="lastname">
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="checkout-form-list">
+                                      <label>Prenom <span class="required">*</span></label>										
+                                      <input type="text" placeholder="" formControlName="firstname">
+                                  </div>
+                              </div>
+                              <div class="col-md-12">
+                                  <div class="checkout-form-list">
+                                      <label>Addresse 1 <span class="required">*</span></label>
+                                      <input type="text" placeholder="" formControlName="address1">
+                                  </div>
+                              </div>
+                                <div class="col-md-12">
+                                  <div class="checkout-form-list">
+                                      <label>Addresse 2</label>
+                                      <input type="text" placeholder="" formControlName="address2">
+                                  </div>
+                              </div>
+                              <div class="col-md-12">
+                                  <div class="checkout-form-list">
+                                      <label>Ville <span class="required">*</span></label>
+                                      <input type="text" placeholder="" formControlName="city">
+                                  </div>
+                              </div>
+                              <div class="col-md-12">
+                                  <div class="checkout-form-list">
+                                      <label>Code Postal<span class="required">*</span></label>										
+                                      <input type="text" placeholder="" formControlName="postalcode">
+                                  </div>
+                              </div>
+                              <div class="col-md-12">
+                                  <div class="checkout-form-list">
+                                      <label>Téléphone  <span class="required">*</span></label>										
+                                      <input type="text" placeholder="" formControlName="phone">
+                                  </div>
+                              </div>
+                              <div class="col-md-12">
+                                  <div class="checkout-form-list">
+                                      <label>E-mail  <span class="required">*</span></label>										
+                                      <input type="text" placeholder="" formControlName="email">
+                                  </div>
+                              </div>
+                                        
+                          </div>
+                          <div class="cart-total">
+                            <input type="submit" value="Commander">
+                        </div>
+                      </div>
+                  </form>
+                  </div>
+    
+                  <div class="col-lg-6 col-md-6">
+                      <div class="your-order">
+                          <h3>Votre commande</h3>
+                          <div class="your-order-table table-responsive">
+                              <table>
+                                  <thead>
+                                      <tr>
+                                          <th class="product-name">Produits</th>
+                                          <th class="product-total">Total</th>
+                                      </tr>							
+                                  </thead>
+                                  <tbody *ngFor="let article of articles">
+                                      <tr class="cart_item">
+                                          <td class="product-name">
+                                              {{article?.name}} <strong class="product-quantity"> × 1</strong>
+                                          </td>
+                                          <td class="product-total">
+                                              <span class="amount">{{article?.price}}€</span>
+                                          </td>
+                                      </tr>
+                                  </tbody>
+                                  <tfoot>
+                                      <tr class="cart-subtotal">
+                                          <th>Sous total</th>
+                                          <td><span class="amount">{{total}}</span></td>
+                                      </tr>
+                                      <tr class="order-total">
+                                          <th>Total</th>
+                                          <td><strong><span class="amount">{{total}}</span></strong>
+                                          </td>
+                                      </tr>								
+                                  </tfoot>
+                              </table>
+                          </div>
+                         
+                      </div>
+                  </div>
+              
+          </div>
+      </div>

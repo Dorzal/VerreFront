@@ -1,0 +1,13 @@
+<header>
+    <div class="recherche">
+      <span>{{ title }}</span>
+      <a routerLink="/panier"><i class="fa fa-shopping-bag"></i>panier</a>
+    </div>
+    <ul class="nav justify-content-center">
+      <li class="nav-item" *ngFor="let category of categories">
+        <a class="nav-link" href="/category/{{category?.id}}" routerLinkActive="active"
+          >{{category?.nom}}</a
+        >
+      </li>
+    </ul>
+  </header>

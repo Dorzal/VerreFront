@@ -102,7 +102,12 @@
         <div class="col-lg-12 col-md-12">
           <div class="your-facturation">
             <p>Choix du point relais</p>
-            <div class="map-responsive">
+            <div *ngFor="let agence of Agences">
+              <p>{{agence?.nom}}</p>
+              <p>{{agence?.adresse}}</p>
+              <p>{{agence?.cp}}</p>
+              <p>{{agence?.ville}}</p>
+              <p>{{agence?.distance}}</p>
             </div>
           </div>
     

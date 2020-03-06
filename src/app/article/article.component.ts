@@ -32,10 +32,13 @@ export class ArticleComponent implements OnInit {
 
   addItem(articleId) {
     let cartItem = JSON.parse(localStorage.getItem('cart'));
+    let qty = JSON.parse(localStorage.getItem('qty'));
+    let i = 1;
     if(!cartItem){
       localStorage.setItem('cart', JSON.stringify({'items' : [articleId]}))
+      localStorage.setItem('qty', JSON.stringify({'qty' : [1]}))
     }else {
-      this.cartService.addCart(cartItem.items, articleId);
+      this.cartService.addCart(cartItem.items, qty.qty, articleId);
     }
   }
 

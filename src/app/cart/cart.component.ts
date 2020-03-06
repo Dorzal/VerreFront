@@ -13,12 +13,14 @@ export class CartComponent implements OnInit {
   cart : any;
   articles : Article[] = [];
   total = 0;
+  qty;
 
   constructor(private articleService : ArticleService, private cartService : CartService) { }
 
   ngOnInit(): void {
     this.getCart();
     this.getItems();
+    this.getLocalStorage();
   }
 
   getCart() {
@@ -26,18 +28,19 @@ export class CartComponent implements OnInit {
   }
 
   getItems(){
+    let count = 0;
     this.cart.items.forEach(element => {
-      this.articleService.getArticleById(element).subscribe(data => {this.articles.push(data); this.getTotal(data.price)});
+      this.articleService.getArticleById(element).subscribe(data => {this.articles.push(data); this.getTotal(data.price, this.qty.qty[count]); count ++});
     })
   }
 
-  getTotal(price){
-    this.total = this.total + price;
+  getTotal(price, qty){
+    this.total = this.total + (price * qty);
     return this.total;
   }
 
   deleteItem(article){
-    this.cartService.deleteItems(this.cart, article.id);
+    this.cartService.deleteItems(this.cart, this.qty, article.id);
     const index : number = this.articles.indexOf(article);
     if (index !== -1) {
       this.articles.splice(index, 1);
@@ -48,5 +51,10 @@ export class CartComponent implements OnInit {
   trackByFn(index, item) {
     return index; // or item.id
   }
+
+  getLocalStorage(){
+    return this.qty = JSON.parse(localStorage.getItem('qty'));
+  }
+
 
 }

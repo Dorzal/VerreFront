@@ -48,13 +48,13 @@
                               <th class="product-total">Total</th>
                           </tr>							
                       </thead>
-                      <tbody *ngFor="let article of articles">
+                      <tbody *ngFor="let article of articles; let i = index;">
                           <tr class="cart_item">
                               <td class="product-name">
                                   {{article?.name}}
                               </td>
                               <td class="product-quantity">
-                                 1
+                                 {{qty.qty[i]}}
                               </td>
                               <td class="product-total">
                                   {{article?.price}}
@@ -64,7 +64,7 @@
                       <tfoot>
                           <tr class="cart-subtotal">
                               <th>Sous total</th>
-                              <td>{{articles.length}}</td>
+                              <td>{{nbarticles}}</td>
                               <td>{{total}}</td>
                           </tr>
                           <tr class="order-total">
@@ -102,20 +102,22 @@
         <div class="col-lg-12 col-md-12">
           <div class="your-facturation">
             <p>Choix du point relais</p>
-            <div *ngFor="let agence of Agences">
-              <p>{{agence?.nom}}</p>
-              <p>{{agence?.adresse}}</p>
-              <p>{{agence?.cp}}</p>
-              <p>{{agence?.ville}}</p>
-              <p>{{agence?.distance}}</p>
+            <form [formGroup]="boutiqueForm" *ngFor="let agence of Agences">
+              <div class="your-facturation">
+                <input type="radio" formControlName="boutique" value="{{agence?.id}}" >
+                <address>
+                  {{agence?.nom}}<br> 
+                  {{agence?.adresse}}<br>
+                  {{agence?.cp}} {{agence?.ville}}<br>
+                  distance : {{ agence?.distance}}
+                </address>
+              </div>
+              <div class="cart-total">
+                <input type="submit" value="Validation de la réservation">
             </div>
+            </form>
           </div>
-    
         </div>
-    </div>
-    
-      <div class="cart-total">
-        <a routerLink="/confirm-reserv">Validation de la réservation</a>
     </div>
     
     

@@ -44,7 +44,7 @@
                     <th class="product-price">prix unitaire</th>
                   </tr>
                 </thead>
-                <tbody *ngFor="let article of articles; trackBy: trackByFn">
+                <tbody *ngFor="let article of articles; trackBy: trackByFn; let i = index">
                   <tr>
                     <td class="product-remove">
                       <a (click)="deleteItem(article)"><i class="fa fa-times"></i></a>
@@ -61,10 +61,10 @@
                       <a href="#">{{article?.name}}</a>
                     </td>
                     <td class="product-quantity">
-                      <input value="1" type="number"/>
+                      {{qty.qty[i]}}
                     </td>
                     <td class="product-price">
-                      <span class="amount">{{article?.price}}€</span>
+                      <span class="amount">{{ qty.qty[i] * article?.price}}€</span>
                     </td>
                   </tr>
                 </tbody>

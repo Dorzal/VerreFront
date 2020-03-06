@@ -97,7 +97,7 @@ width:100%;
 position:absolute;
 }
 
-.cart-total > a {
+.cart-total > input {
   background-color: #333;
   border: 1px solid #333;
   color: #fff;
@@ -106,7 +106,7 @@ position:absolute;
   padding: 9px 20px;
   transition: all 0.3s ease 0s;
 }
-.cart-total > a:hover {
+.cart-total > input:hover {
     background-color: #555;
     color: #fff;
     border: 1px solid #555;

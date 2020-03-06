@@ -16,6 +16,7 @@ export class FormClientComponent implements OnInit {
   cart : any;
   articles : Article[] = [];
   total = 0;
+  qty;
   constructor(private formBuilder: FormBuilder, private articleService : ArticleService, private router : Router) { }
 
   ngOnInit() {
@@ -31,6 +32,7 @@ export class FormClientComponent implements OnInit {
   });
   this.getCart();
   this.getItems();
+  this.getLocalStorage();
   
   }
 
@@ -65,14 +67,19 @@ getCart() {
 }
 
 getItems(){
+  let count = 0;
   this.cart.items.forEach(element => {
-    this.articleService.getArticleById(element).subscribe(data => {this.articles.push(data); this.getTotal(data.price)});
+    this.articleService.getArticleById(element).subscribe(data => {this.articles.push(data); this.getTotal(data.price, this.qty.qty[count]); count ++});
   })
 }
 
-getTotal(price){
-  this.total = this.total + price;
+getTotal(price, qty){
+  this.total = this.total + (price * qty);
   return this.total;
+}
+
+getLocalStorage(){
+  return this.qty = JSON.parse(localStorage.getItem('qty'));
 }
 
 

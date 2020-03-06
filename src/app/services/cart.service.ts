@@ -15,18 +15,30 @@ export class CartService {
 
   constructor(private http: HttpClient) { }
   
-  addCart(cartItems, articleId){
-    cartItems.push(articleId);
-    localStorage.setItem( "cart", JSON.stringify({"items" : cartItems}));
+  addCart(cartItems, qty, articleId){
+    const index : number = cartItems.indexOf(articleId);
+    if (index !== -1) {
+      qty[index] = qty[index] + 1;
+      localStorage.setItem( "qty", JSON.stringify({"qty" : qty}));
+    }else {
+      cartItems.push(articleId);
+      localStorage.setItem( "cart", JSON.stringify({"items" : cartItems}));
+      qty.push(1);
+      localStorage.setItem( "qty", JSON.stringify({"qty" : qty}));
+    }
+    
   }
 
-  deleteItems(cartItems, articleId){
+  deleteItems(cartItems, qty, articleId){
     let tab = cartItems.items
+    let qt = qty.qty
     const index : number = tab.indexOf(articleId);
     if (index !== -1) {
       tab.splice(index, 1);
+      qt.splice(index, 1);
     }
     localStorage.setItem( "cart", JSON.stringify({"items" : tab}));
+    localStorage.setItem( "qty", JSON.stringify({"qty" : qt}));
   }
 
 }

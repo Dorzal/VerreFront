@@ -15,24 +15,38 @@ export class CartService {
 
   constructor(private http: HttpClient) { }
   
-  addCart(cartItems, qty, articleId){
-    const index : number = cartItems.indexOf(articleId);
-    if (index !== -1) {
-      qty[index] = qty[index] + 1;
-      localStorage.setItem( "qty", JSON.stringify({"qty" : qty}));
-    }else {
-      cartItems.push(articleId);
+  addCart(cartItems, qty, article){
+    let index = 0;
+    let valeur;
+    cartItems.forEach(element => {
+
+      if (element.id != article.id) {
+        
+        valeur = true
+        index ++;
+      }else{
+        valeur = false;
+      }
+    });
+
+    if (true === valeur){
+      console.log('je suis dans le true')
+      cartItems.push(article);
       localStorage.setItem( "cart", JSON.stringify({"items" : cartItems}));
-      qty.push(1);
+       qty.push(1);
       localStorage.setItem( "qty", JSON.stringify({"qty" : qty}));
     }
-    
+    if(false === valeur){
+      console.log('je suis dans le false');
+      qty[index] = qty[index] +1;
+      localStorage.setItem( "qty", JSON.stringify({"qty" : qty}));
+    }
   }
 
-  deleteItems(cartItems, qty, articleId){
+  deleteItems(cartItems, qty, article){
     let tab = cartItems.items
     let qt = qty.qty
-    const index : number = tab.indexOf(articleId);
+    const index : number = tab.indexOf(article);
     if (index !== -1) {
       tab.splice(index, 1);
       qt.splice(index, 1);

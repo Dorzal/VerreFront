@@ -44,7 +44,7 @@
                     <th class="product-price">prix unitaire</th>
                   </tr>
                 </thead>
-                <tbody *ngFor="let article of articles; trackBy: trackByFn; let i = index">
+                <tbody *ngFor="let article of cart.items; trackBy: trackByFn; let i = index">
                   <tr>
                     <td class="product-remove">
                       <a (click)="deleteItem(article)"><i class="fa fa-times"></i></a>

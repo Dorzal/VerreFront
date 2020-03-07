@@ -30,15 +30,15 @@ export class ArticleComponent implements OnInit {
     this.articleService.getRandomArticle().subscribe(data =>this.random = data);
   }
 
-  addItem(articleId) {
+  addItem(article) {
     let cartItem = JSON.parse(localStorage.getItem('cart'));
     let qty = JSON.parse(localStorage.getItem('qty'));
     let i = 1;
     if(!cartItem){
-      localStorage.setItem('cart', JSON.stringify({'items' : [articleId]}))
+      localStorage.setItem('cart', JSON.stringify({'items' : [article]}))
       localStorage.setItem('qty', JSON.stringify({'qty' : [1]}))
     }else {
-      this.cartService.addCart(cartItem.items, qty.qty, articleId);
+      this.cartService.addCart(cartItem.items, qty.qty, article);
     }
   }
 

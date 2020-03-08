@@ -1,0 +1,103 @@
+<div class="container">
+    <h1 class="cart-heading">CONFIRMATION</h1>
+    
+    <div class="row bs-wizard" style="border-bottom:0;">
+      <div class="col-xs-3 bs-wizard-step complete">
+        <div class="text-center bs-wizard-stepnum">RECAPITULATIF</div>
+        <div class="progress"><div class="progress-bar"></div></div>
+        <a href="#" class="bs-wizard-dot"></a>
+      </div>
+    
+      <div class="col-xs-3 bs-wizard-step complete">
+        <div class="text-center bs-wizard-stepnum">ADRESSE</div>
+        <div class="progress"><div class="progress-bar"></div></div>
+        <a href="#" class="bs-wizard-dot"></a>
+      </div>
+    
+      <div class="col-xs-3 bs-wizard-step complete">
+        <div class="text-center bs-wizard-stepnum">FACTURATION</div>
+        <div class="progress"><div class="progress-bar"></div></div>
+        <a href="#" class="bs-wizard-dot"></a>
+      </div>
+    
+      <div class="col-xs-3 bs-wizard-step active">
+        <div class="text-center bs-wizard-stepnum">CONFIRMATION</div>
+        <div class="progress"><div class="progress-bar"></div></div>
+        <a href="#" class="bs-wizard-dot"></a>
+      </div>
+    </div>
+    
+    
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <h6 class="my-4">confirmation de la commande</h6>
+          <div class="your-facturation">
+            <p>Merci MR/MME. {{client?.lastname}}</p>
+            <p>
+              Nous vous remercions de votre commande. Votre numéro de commande pour
+              retirer votre colis est 347982. Un email de confirmation a également
+              été envoyé à l'adresse email fournie avec les informations de retrait.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+      <h6 class="my-4">Résumé de votre commande</h6>
+      <div class="your-facturation">
+        <div class="your-order-table table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th class="product-name">Produits</th>
+                <th class="product-quantity">Quantité</th>
+                <th class="product-total">Total</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let article of cart.items; let i = index">
+              <tr class="cart_item">
+                <td class="product-name">
+                  {{article?.name}}
+                </td>
+                <td class="product-quantity">
+                {{qty.qty[i]}}
+                </td>
+                <td class="product-total">
+                {{ qty.qty[i] * article?.price}}€
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr class="order-total">
+                <th><span class="amount">Total</span></th>
+                <td>
+                  <strong><span class="amount">{{nbarticles}}</span></strong>
+                </td>
+                <td>
+                  <strong><span class="amount">{{total}}€</span></strong>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+      <hr />
+    
+      <h6 class="my-4">LES ESSENTIELS BASÉS SUR VOTRE DERNIER ACHAT</h6>
+    
+      <div class="row">
+        <figure class="snip1583 col-md-3 col-sm-6 mb-4" *ngFor="let article of random">
+          <div class="image">
+            <img
+              src="{{article?.photoUrl}}"
+              alt="sample68"
+            />
+            <a routerLink="/article/{{article?.id}}" class="add-to-cart">Détail</a>
+          </div>
+          <figcaption>
+            <h3>{{article?.name}}</h3>
+            <div class="price">{{article?.price}} €</div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    

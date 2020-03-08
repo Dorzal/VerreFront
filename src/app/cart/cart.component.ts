@@ -26,7 +26,6 @@ export class CartComponent implements OnInit {
     this.cart = JSON.parse(localStorage.getItem('cart'));
     
     this.cart.items.forEach(element => {
-      console.log(this.qty)
       this.qty.qty[count];
       this.getTotal(element.price, this.qty.qty[count]); 
       count ++
@@ -40,7 +39,7 @@ export class CartComponent implements OnInit {
   }
 
   deleteItem(article){
-    this.cartService.deleteItems(this.cart, this.qty, article.id);
+    this.cartService.deleteItems(this.cart, this.qty, article);
     const index : number = this.cart.items.indexOf(article);
     if (index !== -1) {
       this.cart.items.splice(index, 1);

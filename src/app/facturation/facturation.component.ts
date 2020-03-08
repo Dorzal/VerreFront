@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import Article from '../models/Article';
 import { ArticleService } from '../services/article.service';
 import { AgenceService } from '../services/agence.service';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +12,6 @@ import { Router } from '@angular/router';
 export class FacturationComponent implements OnInit {
 
   cart : any;
-  articles : Article[] = [];
   total = 0;
   client;
   Agences;
@@ -22,47 +20,31 @@ export class FacturationComponent implements OnInit {
   qty;
   nbarticles = 0;
 
-  constructor(private router : Router,private formBuilder: FormBuilder, private articleService : ArticleService, private agenceService : AgenceService) { }
+  constructor(private router : Router, private agenceService : AgenceService) { }
 
   ngOnInit(): void {
-    this.boutiqueForm = this.formBuilder.group({
-      boutique:  Number 
-    });
-
-    this.getCart();
-    this.getItems();
-    this.getClient();
     this.MyAgences();
     this.getLocalStorage();
+    this.getCart();
+    this.getClient();
     this.calculNb();
   }
 
-  get f() { return this.boutiqueForm.controls; }
-
-  onSubmit() {
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.boutiqueForm.invalid) {
-      console.log('ici');
-        return;
-    }
-    console.log(this.f.boutique.value);
-    this.knowAgence(this.f.boutique.value);
-    this.router.navigate(['/facturation']);
-    
+templateForm(value: any) {
+  this.knowAgence(value)
 }
 
   
 getCart() {
-  this.cart = JSON.parse(localStorage.getItem('cart'));
-}
-
-getItems(){
   let count = 0;
+  this.cart = JSON.parse(localStorage.getItem('cart'));
+  
   this.cart.items.forEach(element => {
-    this.articleService.getArticleById(element).subscribe(data => {this.articles.push(data); this.getTotal(data.price, this.qty.qty[count]); count ++; });
-  })
+    this.qty.qty[count];
+    this.getTotal(element.price, this.qty.qty[count]); 
+    count ++
+  });
+  
 }
 
 getTotal(price, qty){
@@ -80,7 +62,8 @@ MyAgences(){
 
 
 knowAgence(data){
-  localStorage.setItem('boutique', data);
+  localStorage.setItem('boutique', JSON.stringify(data));
+  this.router.navigate(['/confirm']);
 }
 
 getLocalStorage(){

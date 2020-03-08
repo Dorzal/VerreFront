@@ -14,7 +14,6 @@ export class FormClientComponent implements OnInit {
   submitted = false;
 
   cart : any;
-  articles : Article[] = [];
   total = 0;
   qty;
   constructor(private formBuilder: FormBuilder, private articleService : ArticleService, private router : Router) { }
@@ -30,9 +29,9 @@ export class FormClientComponent implements OnInit {
       phone: ['', Validators.required],
       email: ['', Validators.required],
   });
-  this.getCart();
-  this.getItems();
   this.getLocalStorage();
+  this.getCart();
+  
   
   }
 
@@ -63,15 +62,19 @@ updateLocalStorage(){
 }
 
 getCart() {
+  let count = 0;
   this.cart = JSON.parse(localStorage.getItem('cart'));
+  
+  this.cart.items.forEach(element => {
+    console.log(this.qty)
+    this.qty.qty[count];
+    this.getTotal(element.price, this.qty.qty[count]); 
+    count ++
+  });
+  
 }
 
-getItems(){
-  let count = 0;
-  this.cart.items.forEach(element => {
-    this.articleService.getArticleById(element).subscribe(data => {this.articles.push(data); this.getTotal(data.price, this.qty.qty[count]); count ++});
-  })
-}
+
 
 getTotal(price, qty){
   this.total = this.total + (price * qty);

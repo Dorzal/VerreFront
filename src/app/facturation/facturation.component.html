@@ -48,7 +48,7 @@
                               <th class="product-total">Total</th>
                           </tr>							
                       </thead>
-                      <tbody *ngFor="let article of articles; let i = index;">
+                      <tbody *ngFor="let article of cart.items; let i = index;">
                           <tr class="cart_item">
                               <td class="product-name">
                                   {{article?.name}}
@@ -102,7 +102,7 @@
         <div class="col-lg-12 col-md-12">
           <div class="your-facturation">
             <p>Choix du point relais</p>
-            <form [formGroup]="boutiqueForm" *ngFor="let agence of Agences">
+            <!-- <form [formGroup]="boutiqueForm" *ngFor="let agence of Agences">
               <div class="your-facturation">
                 <input type="radio" formControlName="boutique" value="{{agence?.id}}" >
                 <address>
@@ -115,7 +115,22 @@
               <div class="cart-total">
                 <input type="submit" value="Validation de la réservation">
             </div>
-            </form>
+            </form> -->
+            <form #myForm="ngForm" (submit)="templateForm(myForm.value)" *ngFor="let agence of Agences" novalidate>
+
+              <div class="custom-control custom-radio" >
+                 <input id="{{agence?.nom}}" type="radio" value={{agence?.id}} name="boutique" ngModel>
+                 <label  for="{{agence?.nom}}">{{agence?.nom}}</label>
+                 <address>
+                  {{agence?.adresse}}<br>
+                  {{agence?.cp}} {{agence?.ville}}<br>
+                  distance : {{ agence?.distance}}
+                </address>
+              </div>
+              <div class="cart-total">
+              <input type="submit" class="btn btn-danger btn-lg btn-block" value="Validation de la réservation">
+            </div>
+           </form>
           </div>
         </div>
     </div>

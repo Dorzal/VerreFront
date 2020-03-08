@@ -1,0 +1,281 @@
+h6{
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .your-facturation {
+      background: #f2f2f2 none repeat scroll 0 0;
+      padding: 30px 40px 45px;
+      margin-bottom: 35px;
+  }
+  .your-facturation h3 {
+      border-bottom: 1px solid #d8d8d8;
+      font-size: 25px;
+      margin: 0 0 20px;
+      padding-bottom: 10px;
+      text-transform: uppercase;
+      width: 100%;
+  }
+  
+  .your-order-table table {
+      background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+      border: medium none;
+      width: 100%;
+     
+  }
+  .your-order-table table th,
+  .your-order-table table td {
+      border-bottom: 1px solid #d8d8d8;
+      border-right: medium none;
+      font-size: 14px;
+      padding: 15px 0;
+      text-align: center;
+  }
+  .your-order-table table th {
+      border-top: medium none;
+      font-weight: normal;
+      text-align: center;
+      text-transform: uppercase;
+      vertical-align: middle;
+      white-space: nowrap;
+      width: 250px;
+  }
+  .your-order-table table .shipping ul li input {
+      position: relative;
+      top: 2px;
+  }
+  .your-order-table table .shipping th {
+      vertical-align: top;
+  }
+  .your-order-table table .order-total th {
+      border-bottom: medium none;
+      font-size: 18px;
+  }
+  .your-order-table table .order-total td {
+      border-bottom: medium none;
+  }
+  .your-order-table table tr.cart_item:hover {
+      background: #F9F9F9
+  }
+  .your-order-table table tr.order-total td span {
+      color: #464646;
+      font-size: 20px;
+  }
+  h1.cart-heading {
+      color: #252525;
+      font-size: 20px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      text-align: center;
+  }
+  
+  .bs-wizard {margin-top: 40px;}
+  a{
+   color:#afafaf!important;   
+  }
+  .progress{
+      background-color:#cccccc!important;
+      
+  }
+  
+  .snip1583 {
+  
+    font-size: 16px;
+    background-color: #fff;
+    color: #111;
+    line-height: 1.2em;
+  
+  }
+  
+  .snip1583 img {
+    max-width: 100%;
+     transition: opacity 0.35s;
+  
+  
+  }
+  
+  .snip1583 h3 {
+  
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 4px;
+    text-align:left;
+  
+  }
+  
+  .snip1583 .price {
+    margin: 8px 0;
+    font-weight: 700;
+    color: grey;
+    font-size: 1.4rem;
+    text-align:right;
+  }
+  .snip1583 .image {
+    position: relative;
+  
+  }
+  
+  
+  .snip1583 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+  }
+  
+  .snip1583:hover img,
+  .snip1583.hover img {
+    opacity: 0.8;
+  }
+  .snip1583:hover .add-to-cart,
+  .snip1583.hover .add-to-cart {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  
+  .snip1583 .add-to-cart {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    opacity: 0;
+  }
+  
+  .snip1583 .add-to-cart {
+    position: absolute;
+    bottom: 20px;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    font-size: 0.8em;
+    color: #000000;
+    line-height: 46px;
+    letter-spacing: 1.5px;
+    background-color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  .col-sm-6{
+    text-align: center;
+  }
+  
+  /*Form Wizard*/
+  .bs-wizard {border-bottom: solid 1px #e0e0e0; padding: 0 0 10px 0;}
+  .bs-wizard > .bs-wizard-step {padding: 0; position: relative;width:25%}
+  .bs-wizard > .bs-wizard-step .bs-wizard-stepnum {color: #595959; font-size: 16px; margin-bottom: 5px;}
+  .bs-wizard > .bs-wizard-step .bs-wizard-info {color: #999; font-size: 14px;}
+  .bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; display: block; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;} 
+  .bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: black; border-radius: 50px; position: absolute; top: 6px; left: 8px; } 
+  .bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 1px; box-shadow: none; margin: 20px 0;}
+  .bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: black;}
+  .bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {width:100%;}
+  .bs-wizard > .bs-wizard-step.active > .progress > .progress-bar {width:50%;}
+  .bs-wizard > .bs-wizard-step:first-child.active > .progress > .progress-bar {width:0%;}
+  .bs-wizard > .bs-wizard-step:last-child.active > .progress > .progress-bar {width: 100%;}
+  .bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {background-color: white; }
+  
+  .bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: white; border-radius: 50px; position: absolute; top: 6px; left: 8px; border: 0.5px solid;} 
+  .bs-wizard > .bs-wizard-step:first-child  > .progress {left: 50%; width: 50%;}
+  .bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
+  .bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
+  /*END Form Wizard*/
+  
+  
+  /* Icon set - http://ionicons.com */
+  @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
+  @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+  .snip1268 {
+  
+    position: relative;
+    overflow: hidden;
+    min-width: 220px;
+    max-width: 310px;
+    height:329px;
+    width: 100%;
+    color: #333333;
+    text-align: center;
+    background-color: #ffffff;
+    line-height: 1.6em;
+  
+  }
+  .snip1268 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+  }
+  .snip1268 .image {
+    position: relative;
+  
+  }
+  .snip1268 img {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    /*vertical-align: top;*/
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+    min-width: 230px;
+    max-width: 315px;
+    max-height:229px;
+  
+  }
+  .snip1268 .add-to-cart {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    opacity: 0;
+  }
+  
+  .snip1268 .add-to-cart {
+    position: absolute;
+    bottom: 20px;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    font-size: 0.8em;
+    color: #000000;
+    line-height: 46px;
+    letter-spacing: 1.5px;
+    background-color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .snip1268 .add-to-cart:hover {
+    background: #000000;
+    color: #ffffff;
+  }
+  .snip1268 figcaption {
+    padding: 20px 10px 30px;
+  }
+  .snip1268 h2,
+  .snip1268 p {
+    margin: 0;
+    text-align: left;
+  }
+  .snip1268 h2 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  
+  .snip1268 .price {
+    font-size: 1.3em;
+    opacity: 0.5;
+    font-weight: 700;
+    text-align: right;
+  }
+  .snip1268:hover img,
+  .snip1268.hover img {
+    opacity: 0.8;
+  }
+  .snip1268:hover .add-to-cart,
+  .snip1268.hover .add-to-cart {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  

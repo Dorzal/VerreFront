@@ -12,6 +12,7 @@ import { CartComponent } from './cart/cart.component';
 import { FormClientComponent } from './form-client/form-client.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FacturationComponent } from './facturation/facturation.component';
+import { ConfirmComponent } from './confirm/confirm.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FacturationComponent } from './facturation/facturation.component';
     CategoryCatalogueComponent,
     CartComponent,
     FormClientComponent,
-    FacturationComponent
+    FacturationComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,

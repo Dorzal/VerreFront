@@ -30,14 +30,12 @@ export class CartService {
     });
 
     if (true === valeur){
-      console.log('je suis dans le true')
       cartItems.push(article);
       localStorage.setItem( "cart", JSON.stringify({"items" : cartItems}));
        qty.push(1);
       localStorage.setItem( "qty", JSON.stringify({"qty" : qty}));
     }
     if(false === valeur){
-      console.log('je suis dans le false');
       qty[index] = qty[index] +1;
       localStorage.setItem( "qty", JSON.stringify({"qty" : qty}));
     }

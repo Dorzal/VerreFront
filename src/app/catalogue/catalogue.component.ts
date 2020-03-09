@@ -9,7 +9,7 @@ import Article from "../models/Article";
 })
 export class CatalogueComponent implements OnInit {
   page = 1;
-  pageSize =5;
+  pageSize =8;
   articles: Article[];
 
   constructor(private articleService: ArticleService) {}

@@ -3,10 +3,7 @@
     <figure
       class="snip1583 col-md-3 col-sm-6 mb-4"
       *ngFor="
-        let article of articles;
-        let i;
-        of: index
-          | slice: (page - 1) * pageSize:(page - 1) * pageSize + pageSize
+        let article of articles | slice: (page - 1) * pageSize:(page - 1) * pageSize + pageSize
       "
     >
       <div class="image">

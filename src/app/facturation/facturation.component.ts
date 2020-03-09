@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleService } from '../services/article.service';
+import { OrderService } from '../services/order.service';
 import { AgenceService } from '../services/agence.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -20,7 +20,7 @@ export class FacturationComponent implements OnInit {
   qty;
   nbarticles = 0;
 
-  constructor(private router : Router, private agenceService : AgenceService) { }
+  constructor(private router : Router, private agenceService : AgenceService, private orderService : OrderService) { }
 
   ngOnInit(): void {
     this.MyAgences();
@@ -63,7 +63,8 @@ MyAgences(){
 
 knowAgence(data){
   localStorage.setItem('boutique', JSON.stringify(data));
-  this.router.navigate(['/confirm']);
+  this.orderService.addOrder(this.nbarticles, this.total).subscribe();
+  //this.router.navigate(['/confirm']);
 }
 
 getLocalStorage(){

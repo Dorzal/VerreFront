@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import Agence from '../models/Agence';
 
+
 const apiUrl = `${environment.rootUrl}/localisation`;
 
 @Injectable({

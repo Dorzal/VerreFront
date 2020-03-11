@@ -24,7 +24,7 @@ export class OrderService {
     let i = 0;
     let article = [];
     cart.items.forEach(element => {
-      article.push({ id : element.id, qty : qty.qty[i]});
+      article.push({ idArticle : element.id, qty : qty.qty[i]});
       i ++;
     });
     

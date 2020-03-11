@@ -31,7 +31,7 @@ export class FacturationComponent implements OnInit {
   }
 
 templateForm(value: any) {
-  this.knowAgence(value)
+  this.validOrder(value)
 }
 
   
@@ -61,10 +61,10 @@ MyAgences(){
 }
 
 
-knowAgence(data){
+validOrder(data){
   localStorage.setItem('boutique', JSON.stringify(data));
   this.orderService.addOrder(this.nbarticles, this.total).subscribe();
-  //this.router.navigate(['/confirm']);
+  this.router.navigate(['/confirm']);
 }
 
 getLocalStorage(){
@@ -78,5 +78,6 @@ calculNb(){
   return this.nbarticles;
    
 }
+
 
 }

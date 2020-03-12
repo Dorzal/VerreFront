@@ -1,0 +1,17 @@
+.petittrait{
+    width: 150px;
+    border-top: 1px solid rgba(0, 0, 0, 0.22);
+  }
+  
+  li {list-style-type: none;}
+  .product li:before {
+      content: "\00BB \0020";
+  }
+  ul{
+    line-height: 180%;
+  }
+
+  img{
+      width: 350px;
+      margin-bottom: 15px;
+  }

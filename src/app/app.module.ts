@@ -14,6 +14,12 @@ import { FormClientComponent } from "./form-client/form-client.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FacturationComponent } from "./facturation/facturation.component";
 import { ConfirmComponent } from "./confirm/confirm.component";
+import { FaqComponent } from './faq/faq.component';
+import { ClickcollectComponent } from './clickcollect/clickcollect.component';
+import { PointRelaisComponent } from './point-relais/point-relais.component';
+import { AproposComponent } from './apropos/apropos.component';
+import { ContactComponent } from './contact/contact.component';
+import { MentionlegaleComponent } from './mentionlegale/mentionlegale.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,13 @@ import { ConfirmComponent } from "./confirm/confirm.component";
     CartComponent,
     FormClientComponent,
     FacturationComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    FaqComponent,
+    ClickcollectComponent,
+    PointRelaisComponent,
+    AproposComponent,
+    ContactComponent,
+    MentionlegaleComponent
   ],
   imports: [
     BrowserModule,

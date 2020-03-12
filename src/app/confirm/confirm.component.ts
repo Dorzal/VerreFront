@@ -23,6 +23,7 @@ export class ConfirmComponent implements OnInit {
     this.getCart();
     this.calculNb();
     this.getRandom();
+    this.cleanAll();
   }
 
   getClient(){
@@ -59,6 +60,13 @@ export class ConfirmComponent implements OnInit {
 
   getRandom() {
     this.articleService.getRandomArticle().subscribe(data =>this.random = data);
+  }
+  
+  cleanAll() {
+    localStorage.removeItem('client');
+    localStorage.removeItem('boutique');
+    localStorage.removeItem('cart');
+    localStorage.removeItem('qty');
   }
 
 }

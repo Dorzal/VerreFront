@@ -1,21 +1,22 @@
 <div class="container">
   <div class="search">
     <input
-      class="form-control mr-sm-2"
+      class="form-control col-md-4"
       type="search"
-      placeholder="Search"
+      placeholder="Recherche"
       aria-label="Search"
       [(ngModel)]="search"
     />
-    <button class="btn btn-outline-info my-2 my-sm-0" (click)="getSearch(search)">
-      Search
+    <button class="btn btn-outline-info col-md-1" (click)="getSearch(search)">
+      <i class="fa fa-search"></i>
     </button>
   </div>
   <div class="row">
     <figure
       class="snip1583 col-md-3 col-sm-6 mb-4"
       *ngFor="
-        let article of articles | slice: (page - 1) * pageSize:(page - 1) * pageSize + pageSize
+        let article of articles
+          | slice: (page - 1) * pageSize:(page - 1) * pageSize + pageSize
       "
     >
       <div class="image">

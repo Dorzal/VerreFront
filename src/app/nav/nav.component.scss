@@ -1,4 +1,3 @@
-/* Footer */
 li a {
     color: white;
   }
@@ -22,7 +21,10 @@ section {
     color: black;
     margin-left: 20px;
 }
-.search{
-    display: flex;
-    margin-left: auto;
-}
+
+.nav li {
+    width: 17.5em;
+  }
+  .nav-link {
+    padding: 0.5rem 1rem;
+  }

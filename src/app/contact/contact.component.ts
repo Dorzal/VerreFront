@@ -28,13 +28,13 @@ export class ContactComponent {
     });
   }
 
-  save(name, email, subject, message): void {
+  save(name, mail, subject, message): void {
     if (this.ContactForm.invalid) {
       return;
     }
 
     this.data["name"] = name;
-    this.data["mail"] = email;
+    this.data["mail"] = mail;
     this.data["subject"] = subject;
     this.data["message"] = message;
     console.log(this.data);

@@ -11,6 +11,33 @@
 
 .btn-outline-info {
   margin-left: 15px;
+
+  border-color: black;
+}
+
+.fa-search {
+  color: #000000;
+}
+
+.btn-outline-info:not(:disabled):not(.disabled):active {
+  border-color: grey;
+  background-color: grey;
+}
+.btn-outline-info:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.2rem #6c757d52;
+}
+
+.btn-outline-info:focus {
+  box-shadow: 0 0 0 0.2rem #6c757d52;
+}
+
+.btn-outline-info:hover {
+  background-color: grey;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem #6c757d3b !important;
+  border-color: grey !important;
 }
 
 .snip1583 {

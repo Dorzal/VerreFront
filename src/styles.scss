@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap/dist/css/bootstrap.min.css";
 
-* {-moz-box-sizing: border-box; box-sizing: border-box;}
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 html {
   height: 100%;
 }
@@ -13,13 +16,11 @@ body {
   padding-bottom: 20em;
 }
 
-
 .nav-link {
   display: block;
   padding: 0.5rem 2rem;
   text-align: center;
 }
-
 
 .nav li {
   background-color: #292828;
@@ -64,6 +65,15 @@ main div img {
   text-align: left;
 }
 
-.pagination{
-  justify-content: center!important;
+.pagination {
+  justify-content: center !important;
+}
+
+.page-link {
+  color: black;
+}
+
+.page-item.active .page-link {
+  background-color: grey;
+  border-color: grey;
 }

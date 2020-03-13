@@ -37,7 +37,7 @@ import { MentionlegaleComponent } from './mentionlegale/mentionlegale.component'
     PointRelaisComponent,
     AproposComponent,
     ContactComponent,
-    MentionlegaleComponent
+    MentionlegaleComponent,
   ],
   imports: [
     BrowserModule,

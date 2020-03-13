@@ -16,40 +16,28 @@ import {
 export class ContactComponent {
   ContactForm: FormGroup;
   public data: any = [];
+  submitted = false;
 
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.ContactForm = new FormGroup({
-      name: new FormControl("", [Validators.required]),
-      mail: new FormControl("", [Validators.required]),
-      subject: new FormControl("", [Validators.required]),
-      message: new FormControl("", [Validators.required])
+    this.ContactForm = this.formBuilder.group({
+      name: ['',Validators.required],
+      mail: ['',Validators.required],
+      subject: ['',Validators.required],
+      message: ['',Validators.required]
     });
   }
 
-  save(name, mail, subject, message): void {
-    if (this.ContactForm.invalid) {
-      return;
-    }
+  get f() { return this.ContactForm.controls; }
 
-    this.data["name"] = name;
-    this.data["mail"] = mail;
-    this.data["subject"] = subject;
-    this.data["message"] = message;
-    console.log(this.data);
-    //add request to send email or into mysql
-    this.http.put<any>("", this.data).subscribe(
-      res => {
-        console.log(res);
-      },
-      (err: HttpErrorResponse) => {
-        if (err.error instanceof Error) {
-          console.log("Client-side error occured.");
-        } else {
-          console.log("Server-side error occurred.");
-        }
-      }
-    );
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.ContactForm.invalid) {
+        return;
+    }
   }
+
 }

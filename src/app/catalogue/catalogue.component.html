@@ -1,4 +1,16 @@
 <div class="container">
+  <div class="search">
+    <input
+      class="form-control mr-sm-2"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+      [(ngModel)]="search"
+    />
+    <button class="btn btn-outline-info my-2 my-sm-0" (click)="getSearch(search)">
+      Search
+    </button>
+  </div>
   <div class="row">
     <figure
       class="snip1583 col-md-3 col-sm-6 mb-4"

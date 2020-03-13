@@ -26,4 +26,9 @@ export class ArticleService {
     let url = `${apiUrl}/randomarticle`
     return this.http.get<Article[]>(url);
   }
+
+  getSearch(recherche): Observable<Article[]>{
+    let url = `${apiUrl}/search?search=${recherche}`;
+    return this.http.get<Article[]>(url);
+  }
 }

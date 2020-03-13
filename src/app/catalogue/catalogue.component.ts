@@ -10,7 +10,8 @@ import Article from "../models/Article";
 export class CatalogueComponent implements OnInit {
   page = 1;
   pageSize =8;
-  articles: Article[];
+  public articles: Article[];
+  search = '';
 
   constructor(private articleService: ArticleService) {}
 
@@ -23,4 +24,17 @@ export class CatalogueComponent implements OnInit {
       .getArticles()
       .subscribe(articleData => (this.articles = articleData));
   }
+
+
+  setArticles(Article){
+    this.articles = Article;
+  }
+
+  
+  public getSearch(recherche) {
+    this.articles = null;
+    this.articleService.getSearch(recherche).subscribe(articleData => this.articles = articleData);
+  }
+
+
 }

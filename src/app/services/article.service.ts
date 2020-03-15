@@ -31,4 +31,9 @@ export class ArticleService {
     let url = `${apiUrl}/search?search=${recherche}`;
     return this.http.get<Article[]>(url);
   }
+
+  knowStock(id){
+    let url = `${environment.rootUrl}/stock/${id}`;
+    return this.http.get(url);
+  }
 }

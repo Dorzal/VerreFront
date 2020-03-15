@@ -1,7 +1,7 @@
 <header>
   <div class="recherche">
     <span>{{ title }}</span>
-    <a routerLink="/panier"><i class="fa fa-shopping-bag"></i></a>
+    <a routerLink="/panier"><span class="w3-badge w3-red">{{nbarticles}}</span><i class="fa fa-shopping-bag"></i></a>
   </div>
   <ul class="nav justify-content-center">
     <li class="nav-item" *ngFor="let category of categories">

@@ -13,14 +13,26 @@ export class NavComponent implements OnInit {
   
   title = 'VerreTech';
   categories : Category[] ;
+  nbarticles = 0;
   constructor(private categoryService: CategoryService, private articleService: ArticleService) { }
 
   ngOnInit(): void {
     this.getCategories();
+    this.badge();
   }
 
   getCategories(){
     this.categoryService.getCategories().subscribe(data => this.categories = data );
+  }
+
+  public badge(){
+    let local = localStorage.getItem('qty');
+    let qty = JSON.parse(local);
+    qty.qty.forEach(element => {
+      this.nbarticles += element;
+    })
+    return this.nbarticles;
+     
   }
 
 

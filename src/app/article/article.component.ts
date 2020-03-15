@@ -13,12 +13,14 @@ export class ArticleComponent implements OnInit {
 
   article : Article;
   random : Article[];
+  stock;
 
   constructor(private articleService : ArticleService, private route: ActivatedRoute, private cartService : CartService) { }
 
   ngOnInit(): void {
     this.getArticleById();
     this.getRandom();
+    this.knowStock();
   }
 
   getArticleById() {
@@ -40,6 +42,11 @@ export class ArticleComponent implements OnInit {
     }else {
       this.cartService.addCart(cartItem.items, qty.qty, article);
     }
+  }
+
+  knowStock() {
+    let id = +this.route.snapshot.paramMap.get('id');
+    this.articleService.knowStock(id).subscribe(data => {this.stock = data; console.log(this.stock)});
   }
 
 }

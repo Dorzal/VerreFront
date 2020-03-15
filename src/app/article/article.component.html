@@ -43,9 +43,10 @@
               </div>
             </div>
           </div>
-          <button type="button" class="btn btn-light panier" (click)="addItem(article)">
+          <button type="button" class="btn btn-light panier" (click)="addItem(article)" *ngIf="stock.qty != 0">
             <i class="fa fa-shopping-bag"></i> Ajouter au panier
           </button>
+          <p style="color : red " *ngIf="stock.qty == 0"> Rupture de Stock</p>
         </div>
       </div>
     </div>

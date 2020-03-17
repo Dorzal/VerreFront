@@ -70,10 +70,10 @@ main div img {
 }
 
 .page-link {
-  color: black;
+  color: black !important;
 }
 
 .page-item.active .page-link {
-  background-color: grey;
-  border-color: grey;
+  background-color: grey !important;
+  border-color: grey !important;
 }

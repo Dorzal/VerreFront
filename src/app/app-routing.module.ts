@@ -13,6 +13,7 @@ import { PointRelaisComponent } from './point-relais/point-relais.component';
 import { AproposComponent } from './apropos/apropos.component';
 import { ContactComponent } from './contact/contact.component';
 import { MentionlegaleComponent } from './mentionlegale/mentionlegale.component';
+import { OutStockComponent } from './out-stock/out-stock.component';
 
 const routes: Routes = [
   { path: "confirm", component: ConfirmComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: "apropos", component: AproposComponent },
   { path: "contact", component: ContactComponent },
   { path: "mentionleg", component: MentionlegaleComponent },
+  { path: "outofstock", component: OutStockComponent },
   { path: "**", component: CatalogueComponent }
 ];
 

@@ -65,7 +65,7 @@ validOrder(data){
   localStorage.setItem('boutique', JSON.stringify(data));
   this.orderService.addOrder(this.nbarticles, this.total).subscribe( data => { if(data != null) { 
     this.router.navigate(['/confirm'])
-    }
+    }else { this.router.navigate(['/outofstock']) }
   }
 );
 }

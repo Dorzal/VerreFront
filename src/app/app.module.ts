@@ -20,6 +20,7 @@ import { PointRelaisComponent } from './point-relais/point-relais.component';
 import { AproposComponent } from './apropos/apropos.component';
 import { ContactComponent } from './contact/contact.component';
 import { MentionlegaleComponent } from './mentionlegale/mentionlegale.component';
+import { OutStockComponent } from './out-stock/out-stock.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MentionlegaleComponent } from './mentionlegale/mentionlegale.component'
     AproposComponent,
     ContactComponent,
     MentionlegaleComponent,
+    OutStockComponent,
   ],
   imports: [
     BrowserModule,

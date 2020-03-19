@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row" > 
-        <figure class="snip1583 col-md-3 col-sm-6 mb-4" *ngFor="let article of articles; let i of index">
+        <figure class="imageproduct col-md-3 col-sm-6 mb-4" *ngFor="let article of articles; let i of index">
             <div class="image">
               <img
                 src="{{article?.photoUrl}}"
-                alt="sample68"
+                alt="Image du produit"
               />
               <a routerLink="/article/{{article?.id}}" class="add-to-cart">Voir le détail</a>
             </div>

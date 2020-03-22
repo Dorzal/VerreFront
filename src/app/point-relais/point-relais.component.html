@@ -2,10 +2,10 @@
   <div class="row">
     <h2>Point relais</h2>
     <div class="col-lg-12 col-md-12">
-      <p>Découvrez votre point relais le plus proche :</p>
-      <ul class="list-unstyled quick-links">
+      <p>Découvrez tous nos points de relais :</p>
+      <ul class="list-unstyled quick-links" *ngFor="let agence of agences">
         <li>
-          <p><i class="fa fa-angle-double-right"> Mitry-Mory (77)</i></p>
+          <p><i class="fa fa-angle-double-right"> {{agence?.nom}}</i></p>
         </li>
       </ul>
     </div>

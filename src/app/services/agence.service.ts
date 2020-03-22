@@ -14,8 +14,8 @@ export class AgenceService {
 
   constructor(private http : HttpClient) { }
 
-  getAgences() {
-    return this.http.get(apiUrl);
+  getAgences() : Observable<Agence[]> {
+    return this.http.get<Agence[]>(apiUrl);
   }
 
   choiceAgence() {

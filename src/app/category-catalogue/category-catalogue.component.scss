@@ -13,6 +13,9 @@
 .imageproduct img {
   max-width: 100%;
   transition: opacity 0.35s;
+  width: 440px;
+  height: 320px;
+  object-fit: cover;
 }
 
 .imageproduct h3 {
@@ -75,10 +78,4 @@
 
 .col-sm-6 {
   text-align: center;
-}
-
-.image {
-  width: 440px;
-  height: 320px;
-  object-fit: cover;
 }
